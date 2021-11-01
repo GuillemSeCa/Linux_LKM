@@ -47,6 +47,6 @@ www.guillemserracazorla.com
 ---
 **NOTE:**
 
-All this project has been developed and tested under the RaspberryPi Zero.
+All this project has been developed and tested under the RaspberryPi Zero on the Raspberry Pi OS Lite.
 
 ---

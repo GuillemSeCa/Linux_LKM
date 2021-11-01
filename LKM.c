@@ -126,7 +126,7 @@ static void __exit ebbgpio_exit(void){
  
 
 static irq_handler_t ebbgpio_irq_handler_buttonLedB_ON(unsigned int irq, void *dev_id, struct pt_regs *regs){
-   ledB = true;                          // Turn the led ON
+   ledB = true;                          // Turn the led B ON
    gpio_set_value(gpioLED_B, ledB);          // Set the physical LED accordingly
 
    printk(KERN_INFO "GPIO_ButtonC: Interrupt! LED B on True\n");
@@ -135,7 +135,7 @@ static irq_handler_t ebbgpio_irq_handler_buttonLedB_ON(unsigned int irq, void *d
 }
 
 static irq_handler_t ebbgpio_irq_handler_buttonLedB_OFF(unsigned int irq, void *dev_id, struct pt_regs *regs){
-   ledB = false;                          // Turn the led OFF
+   ledB = false;                          // Turn the led B OFF
    gpio_set_value(gpioLED_B, ledB); 
    
    printk(KERN_INFO "GPIO_ButtonD: Interrupt! LED B on False\n");
@@ -144,7 +144,7 @@ static irq_handler_t ebbgpio_irq_handler_buttonLedB_OFF(unsigned int irq, void *
 }
 
 static irq_handler_t ebbgpio_irq_handler_buttonLedA_ON(unsigned int irq, void *dev_id, struct pt_regs *regs){
-   ledA = true;                          // Turn the led ON
+   ledA = true;                          // Turn the led A ON
    gpio_set_value(gpioLED_A, ledA);          // Set the physical LED accordingly
 
    printk(KERN_INFO "GPIO_ButtonA: Interrupt! LED A on True\n");
@@ -153,7 +153,7 @@ static irq_handler_t ebbgpio_irq_handler_buttonLedA_ON(unsigned int irq, void *d
 }
 
 static irq_handler_t ebbgpio_irq_handler_buttonLedA_OFF(unsigned int irq, void *dev_id, struct pt_regs *regs){
-   ledA = false;                          // Turn the led OFF
+   ledA = false;                          // Turn the led A OFF
    gpio_set_value(gpioLED_A, ledA);          // Set the physical LED accordingly
 
    printk(KERN_INFO "GPIO_ButtonB: Interrupt! LED A on False\n");

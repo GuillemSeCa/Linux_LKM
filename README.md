@@ -39,8 +39,10 @@ Searching something new, I found a much easier way to install them:
 sudo apt install raspberrypi-kernel-headers
 ```
 
+## Module coding
 Once we have the headers installed, I read diagonally the documentation provided and understood that the implementation was the easy part. Created 4 functions for the buttons (inputs) and mapping 2 LEDs (outputs). Took about 30 minutes, this part. 
 
+## Debugging
 To debug the system we used ```tail -f /var/log/kern.log``` to check all the printks were doing great and actuating when they were supposed to actuate. This was very useful to detect problems and debug unexpected behaviors.
 
 

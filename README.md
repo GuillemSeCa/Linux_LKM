@@ -59,3 +59,9 @@ www.guillemserracazorla.com
 All this project has been developed and tested under the RaspberryPi Zero on the Raspberry Pi OS Lite.
 
 ---
+
+introducció 
+
+explicació del codi
+
+conclusions

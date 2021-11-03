@@ -1,3 +1,3 @@
 #!/bin/bash
 
-echo "Script C executed" >> /home/pi/output.log
+echo "Script D executed" >> /home/pi/output.log

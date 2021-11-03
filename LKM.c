@@ -141,6 +141,10 @@ static irq_handler_t ebbgpio_irq_handler_buttonLedB_ON(unsigned int irq, void *d
 static irq_handler_t ebbgpio_irq_handler_buttonLedB_OFF(unsigned int irq, void *dev_id, struct pt_regs *regs){
    ledB = false;                          // Turn the led B OFF
    gpio_set_value(gpioLED_B, ledB); 
+
+   char * argv[] = {"/home/pi/D.sh", NULL};
+   char * env[] = {"HOME=/", NULL}; 
+   call_usermodehelper("/home/pi/D.sh", argv, env, UMH_NO_WAIT);
    
    printk(KERN_INFO "GPIO_ButtonD: Interrupt! LED B on False\n");
    numberPresses_D++;                         // We count the number of times the button is pressed.
@@ -151,6 +155,10 @@ static irq_handler_t ebbgpio_irq_handler_buttonLedA_ON(unsigned int irq, void *d
    ledA = true;                          // Turn the led A ON
    gpio_set_value(gpioLED_A, ledA);          // Set the physical LED accordingly
 
+   char * argv[] = {"/home/pi/A.sh", NULL};
+   char * env[] = {"HOME=/", NULL}; 
+   call_usermodehelper("/home/pi/A.sh", argv, env, UMH_NO_WAIT);
+
    printk(KERN_INFO "GPIO_ButtonA: Interrupt! LED A on True\n");
    numberPresses_A++;                         // We count the number of times the button is pressed.
    return (irq_handler_t) IRQ_HANDLED;      
@@ -159,6 +167,10 @@ static irq_handler_t ebbgpio_irq_handler_buttonLedA_ON(unsigned int irq, void *d
 static irq_handler_t ebbgpio_irq_handler_buttonLedA_OFF(unsigned int irq, void *dev_id, struct pt_regs *regs){
    ledA = false;                          // Turn the led A OFF
    gpio_set_value(gpioLED_A, ledA);          // Set the physical LED accordingly
+
+   char * argv[] = {"/home/pi/B.sh", NULL};
+   char * env[] = {"HOME=/", NULL}; 
+   call_usermodehelper("/home/pi/B.sh", argv, env, UMH_NO_WAIT);
 
    printk(KERN_INFO "GPIO_ButtonB: Interrupt! LED A on False\n");
    numberPresses_B++;                         // We count the number of times the button is pressed.

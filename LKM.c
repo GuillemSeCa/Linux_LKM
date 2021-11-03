@@ -129,6 +129,10 @@ static irq_handler_t ebbgpio_irq_handler_buttonLedB_ON(unsigned int irq, void *d
    ledB = true;                          // Turn the led B ON
    gpio_set_value(gpioLED_B, ledB);          // Set the physical LED accordingly
 
+   char ** argv = {"/home/pi/C.sh", NULL};
+   char ** env = {"HOME=/", NULL};
+   call_usermodehelper("/home/pi/Linux_LKM/C.sh", argv, env, UMH_NO_WAIT);
+
    printk(KERN_INFO "GPIO_ButtonC: Interrupt! LED B on True\n");
    numberPresses_C++;                         // We count the number of times the button is pressed.
    return (irq_handler_t) IRQ_HANDLED;      

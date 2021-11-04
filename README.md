@@ -5,15 +5,47 @@
 
 //TODO: 
 
-# Installation from script
+
+<br>
+
+# Installation
+## Installation of the headers (IMPORTANT)
+Installing the headers is a obligatory step. It's very straightfoward by just running a command to get the package.
+```
+sudo apt install raspberrypi-kernel-headers
+```
+
+## Installation from the script (recommended)
 In case you want to do the easy installation, you will have to download only the Installation script with the name ```Install.sh```. With that script all the process from the cloning to the installation is done by itself only having to run:
 ```
 sh Install.sh
 ```
-<br>
 
-# Manual Installation from git repository
-First you will have to clone this repository on your RaspberryPi. Then you will have to enter and do a ```make``` that will compile all you need to add this module. Once it finishes, you will just have to do ```sudo insmod LKM.ko``` to install it. 
+
+## Manual Installation from git repository
+First you will have to clone this repository on your RaspberryPi. 
+
+There are two options when compiling using the Makefile (inside the code directory):
+1. To clean the compilation (to compile a newer version with some changes for example) you will have to run the following command:
+
+```
+make clean
+```
+2. To compile the code you just have to do the following command:
+```
+make
+```
+3. Once we have the code compiled we have to insert it on the headers with this command:
+```
+sudo insmod LKM.ko
+```
+**At this stage the driver should work!**
+
+4. To unistall the driver (for example if you want to put a newer version with some changes) you first have to remove the module using this command:
+```
+sudo rmmod LKM.ko
+```
+
 
 **NOW IT'S READY TO USE!**
 <br>
@@ -51,9 +83,12 @@ One of the last minute additions was the functionality that for each button pres
 ## Debugging
 To debug the system we used ```tail -f /var/log/kern.log``` to check all the printks were doing great and actuating when they were supposed to actuate. This was very useful to detect problems and debug unexpected behaviors.
 
-# Conclusions
+<br>
 
-//TODO: 
+# Conclusions
+One of the things I have valued the most during the development of the project was how starting without knowing much I had to do the reasearch not only documentation of the kernel but examples... I think it not only improved my understanding on linux but also helped to do research of a new technology more efficient. 
+
+I also value the visibility of the code, if it works it should turn on the LED. This was a more phisical way of debugging at the start of the coding. The process of development has been very iterative (trying to turn on a led, making a led depend to a button, making a button execute the script...). This iterations helped get a better depth on the understanding of the kernel. 
 
 <br>
 
@@ -68,6 +103,3 @@ www.guillemserracazorla.com
 All this project has been developed and tested under the RaspberryPi Zero on the Raspberry Pi OS Lite.
 
 ---
-
-
-//TODO: explicació del codi

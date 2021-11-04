@@ -2,7 +2,7 @@
 
 sudo apt install raspberrypi-kernel-headers
 
-if [ ! -d "Linux_LKM" ]; then
+if [ ! -d "code" ]; then
     echo "As the git repo doesn't exist already we clone it!"
     sudo apt-get -y install git && git clone https://github.com/GuillemSeCa/Linux_LKM.git
 fi

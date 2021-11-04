@@ -1,6 +1,10 @@
 # Administration and System Design
 ## Practica 1 Fase 1
 
+# Introduction
+
+//TODO: 
+
 # Installation from script
 In case you want to do the easy installation, you will have to download only the Installation script with the name ```Install.sh```. With that script all the process from the cloning to the installation is done by itself only having to run:
 ```
@@ -42,9 +46,14 @@ sudo apt install raspberrypi-kernel-headers
 ## Module coding
 Once we have the headers installed, I read diagonally the documentation provided and understood that the implementation was the easy part. Created 4 functions for the buttons (inputs) and mapping 2 LEDs (outputs). Took about 30 minutes, this part. 
 
+One of the last minute additions was the functionality that for each button press It would have to execute a given script. At first I thought this would be done with the execute() function from C, but later on I saw it wasn't working and I had to use the call_usermodehelper() to have the job done. To solve the 2nd and 3rd argument I had to search for some examples of the function being called and saw what was being expected there. I have to add that the official documentation for this function could be better explained, in particular this 2 arguments
+
 ## Debugging
 To debug the system we used ```tail -f /var/log/kern.log``` to check all the printks were doing great and actuating when they were supposed to actuate. This was very useful to detect problems and debug unexpected behaviors.
 
+# Conclusions
+
+//TODO: 
 
 <br>
 
@@ -60,8 +69,5 @@ All this project has been developed and tested under the RaspberryPi Zero on the
 
 ---
 
-introducció 
 
-explicació del codi
-
-conclusions
+//TODO: explicació del codi

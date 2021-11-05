@@ -97,7 +97,15 @@ I also value the visibility of the code, if it works it should turn on the LED. 
 
 <br>
 
+# Repository
+This project can be found in GitHub:
+
+https://github.com/GuillemSeCa/Linux_LKM
+
+<br>
+
 # Credits
+
 Guillem Serra Cazorla (gserracazorla@gmail.com)
 
 www.guillemserracazorla.com
